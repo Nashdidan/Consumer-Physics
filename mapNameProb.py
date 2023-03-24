@@ -7,19 +7,6 @@ class MapNameProb:
     def __init__(self, logger: Logger):
         self.logger = logger
 
-    def test(self):
-        iterations = 100
-        error_limit = 30
-        name_prob = {"Amit": 0.3, "Tamar": 0.2, "Yaron": 0.5}
-        counts = self.print_prob(iterations, name_prob)
-        error_percentage = self._check_error(iterations, name_prob, counts)
-        if all(i < error_limit for i in error_percentage.values()):
-            self.logger.info("Pass - Map Name Prob Test {} is lower then {}"
-                             .format(error_percentage, error_limit))
-        else:
-            self.logger.error("Failed - Map Name Prob Test - error percentage {} is greater then {}"
-                              .format(error_percentage, error_limit))
-
     def _select_name(self, name_prob: Dict[str, int], total_prob: int):
         rand_num = random.uniform(0, total_prob)
         current_prob = 0
@@ -40,7 +27,7 @@ class MapNameProb:
         print(counts)
         return counts
 
-    def _check_error(self, iterations: int, name_prob: Dict[str, int], actual_counts: Dict[str, int]) -> Dict[str, int]:
+    def check_error(self, iterations: int, name_prob: Dict[str, int], actual_counts: Dict[str, int]) -> Dict[str, int]:
         expected_counts = {name: int(iterations * prob) for name, prob in name_prob.items()}
         error_percentages = {name: abs((actual_counts[name] - expected_counts[name]) / expected_counts[name]) * 100 for
                              name in name_prob}
