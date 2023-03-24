@@ -1,1 +1,8 @@
 
+2023-03-24 03:25:54,172 - INFO - expected result: {'Amit': 30, 'Tamar': 20, 'Yaron': 50}
+2023-03-24 03:25:54,172 - INFO - error percentage: {'Amit': 6.666666666666667, 'Tamar': 30.0, 'Yaron': 8.0}
+2023-03-24 03:25:54,172 - WARNING - empty strings were given
+2023-03-24 03:27:00,167 - INFO - expected result: {'Amit': 30, 'Tamar': 20, 'Yaron': 50}
+2023-03-24 03:27:00,167 - INFO - error percentage: {'Amit': 6.666666666666667, 'Tamar': 10.0, 'Yaron': 0.0}
+2023-03-24 03:27:07,575 - INFO - expected result: {'Amit': 30, 'Tamar': 20, 'Yaron': 50}
+2023-03-24 03:27:07,575 - INFO - error percentage: {'Amit': 6.666666666666667, 'Tamar': 25.0, 'Yaron': 6.0}
