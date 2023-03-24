@@ -5,6 +5,23 @@ class OneEditApart:
     def __init__(self, logger: Logger):
         self.logger = logger
 
+    def test(self):
+        expected_list = [False, True, True, True, True, False, False, True, False]
+        ans_list = []
+        ans_list.append(self.is_one_edit_apart("cat", "dog"))
+        ans_list.append(self.is_one_edit_apart("cat", "cats"))
+        ans_list.append(self.is_one_edit_apart("cat", "cut"))
+        ans_list.append(self.is_one_edit_apart("cat", "cast"))
+        ans_list.append(self.is_one_edit_apart("cat", "at"))
+        ans_list.append(self.is_one_edit_apart("cat", "act"))
+        ans_list.append(self.is_one_edit_apart("cat", "cat"))
+        ans_list.append(self.is_one_edit_apart("asdf", "jasdf"))
+        ans_list.append(self.is_one_edit_apart("", ""))
+
+        if ans_list == expected_list:
+            self.logger.info("Pass - One Edit Apart Test")
+        else:
+            self.logger.error("Failed - One Edit Apart Test")
     def is_one_edit_apart(self, first: str, second: str) -> bool:
         res_list = []
         if not first or not second:
