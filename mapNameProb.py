@@ -30,7 +30,6 @@ class MapNameProb:
     def check_error(self, iterations: int, name_prob: Dict[str, int], actual_counts: Dict[str, int]) -> Dict[str, int]:
         expected_counts = {name: int(iterations * prob) for name, prob in name_prob.items()}
         error_percentages = {name: abs((actual_counts[name] - expected_counts[name]) / expected_counts[name]) * 100 for
-                             name in name_prob}
-        # self.logger.info("expected result: {}".format(expected_counts))
-        # self.logger.info("error percentage: {}".format(error_percentages))
+                             name in name_prob if expected_counts[name] != 0}
+        
         return error_percentages
